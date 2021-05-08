@@ -54,7 +54,7 @@ int main(int argc,char* argv[])
 	threadQuit = true;
 	DWORD res = WaitForSingleObject(hThread, 5000);
 	if (res != WAIT_OBJECT_0) {
-		ExitThread(0L);
+		TerminateThread(hThread,0L);
 	}
 	CloseHandle(hThread);
 	WinDivertClose(winDivertHandle);
